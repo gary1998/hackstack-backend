@@ -4,7 +4,7 @@ var { eventRegistrationModel } = require('./models/eventRegistration');
 
 const loginUser = (data) => {
     return new Promise((resolve, reject) => {
-        userModel.findOne(data, (err, user) => {
+        userModel.findOne(data, '-_id -__v', (err, user) => {
             if(err){
                 reject(err);
             } else {
@@ -16,7 +16,7 @@ const loginUser = (data) => {
 
 const getAllUsers = () => {
     return new Promise((resolve, reject) => {
-        userModel.find({}, (err, users) => {
+        userModel.find({}, '-_id -__v', (err, users) => {
             if(err){
                 reject(err);
             } else {
@@ -28,7 +28,7 @@ const getAllUsers = () => {
 
 const getUser = (email) => {
     return new Promise((resolve, reject) => {
-        userModel.findOne({email}, (err, users) => {
+        userModel.findOne({email}, '-_id -__v', (err, users) => {
             if(err){
                 reject(err);
             } else {
@@ -40,7 +40,7 @@ const getUser = (email) => {
 
 const getAllEvents = () => {
     return new Promise((resolve, reject) => {
-        eventModel.find({}, (err, users) => {
+        eventModel.find({}, '-_id -__v', (err, users) => {
             if(err){
                 reject(err);
             } else {
@@ -52,7 +52,7 @@ const getAllEvents = () => {
 
 const getEvent = (eventId) => {
     return new Promise((resolve, reject) => {
-        eventModel.findOne({eventId}, (err, users) => {
+        eventModel.findOne({eventId}, '-_id -__v', (err, users) => {
             if(err){
                 reject(err);
             } else {
@@ -64,7 +64,7 @@ const getEvent = (eventId) => {
 
 const getAllEventRegistrations = () => {
     return new Promise((resolve, reject) => {
-        eventRegistrationModel.find({}, (err, users) => {
+        eventRegistrationModel.find({}, '-_id -__v', (err, users) => {
             if(err){
                 reject(err);
             } else {
@@ -76,7 +76,7 @@ const getAllEventRegistrations = () => {
 
 const getEventRegistration = (regId) => {
     return new Promise((resolve, reject) => {
-        eventRegistrationModel.findOne({regId}, (err, users) => {
+        eventRegistrationModel.findOne({regId}, '-_id -__v', (err, users) => {
             if(err){
                 reject(err);
             } else {

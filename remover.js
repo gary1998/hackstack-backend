@@ -11,8 +11,8 @@ const deleteUser = (email) => {
                 logger.error(`error while removing USER: ${err}`);
                 reject(err);
             } else {
-                logger.info(`USER removed: ${data.email}`);
-                resolve(`USER removed: ${data.email}`);
+                logger.info(`USER removed: ${email}`);
+                resolve(`USER removed: ${email}`);
             }
         });
     });
