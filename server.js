@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser')
 const { initiateConnection } = require('./connector');
 const port = process.env.PORT || 3000;
-const { getAllUsers, getUser, getAllEvents, getEvent, getEventRegistration, getAllEventRegistrations } = require('./getters');
+const { loginUser, getAllUsers, getUser, getAllEvents, getEvent, getEventRegistration, getAllEventRegistrations } = require('./getters');
 const { editUser, editEvent, editEventRegistration } = require('./updater');
 const { deleteUser, deleteEvent, deleteEventRegistration } = require('./remover');
 const { saveUser, saveEvent, saveEventRegistration } = require('./savers');
@@ -14,6 +14,14 @@ app.use(bodyParser.json())
 app.get('/', (_, res) => {
     res.send('StackHack v1 Backend Express Server');
 });
+
+app.post('/login', (req, res) => {
+    loginUser(req.body).then(response => {
+        res.send(response);
+    }).catch(err => {
+        res.send(err);
+    });
+})
 
 app.get('/users/:email', (req, res) => {
     getUser(req.params.email).then(response => {
