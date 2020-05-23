@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "8f1ee43b-5c64-420c-8205-d694baf0eb4e",
+		"name": "StackHack",
+		"description": "### StackHack v1\r\n\r\n#### GET Endpoints\r\n* GET All Users (/users): Returns list of all users registered yet.\r\n* GET User (/users/:email): Returns user with given email id, if any.\r\n* GET All Events (/events): Returns list of all events registered yet. \r\n* GET Event (/events/:eventId): Returns event with given event id, if any.\r\n* GET All Registrations (/registrations): Returns list of all event registrations registered yet.\r\n* GET Registration (/registrations/:regId): Return event registration with given registration id, if any.\r\n\r\n#### POST Endpoints\r\n* POST User (/users): Creates new user with given model:\r\n```json\r\n{\r\n    \"email\": \"abc@example.com\",\r\n    \"password\": \"123\"\r\n}\r\n```\r\n* POST Event (/events): Creates new event with given model:\r\n```json\r\n{\r\n    \"eventDate\": new Date().getTime(),\r\n    \"eventLocation\": \"Bangalore\",\r\n    \"eventEmail\": \"abc@example.com\",\r\n    \"eventHelpline\": 9999999999,\r\n    \"totalTickets\": 110,\r\n    \"eventId\": \"blr01\"\r\n}\r\n```\r\n* POST Event Registration (/registrations): Creates new event registration with given model:\r\n```json\r\n    \"registeredName\": \"abc\",\r\n    \"registeredPhone\": 9999999999,\r\n    \"registeredEmail\": \"abc@example.com\",\r\n    \"registeredIDCard\": \"data:image/png;base64,...\"\r\n    \"eventId\": \"blr01\",\r\n    \"type\": \"Self\",\r\n    \"ticketCount\": 1,\r\n    \"regId\": \"abc:blr01\"\r\n```\r\n\r\n#### PUT Endpoints\r\n* PUT User (/users): Updates user, if any, with given model:\r\n```json\r\n{\r\n    \"email\": \"abc@example.com\",\r\n    \"password\": \"123\"\r\n}\r\n* PUT Event (/events): Updates event, if any, with given model:\r\n```json\r\n{\r\n    \"eventDate\": new Date().getTime(),\r\n    \"eventLocation\": \"Bangalore\",\r\n    \"eventEmail\": \"abc@example.com\",\r\n    \"eventHelpline\": 9999999999,\r\n    \"totalTickets\": 110,\r\n    \"eventId\": \"blr01\"\r\n}\r\n```\r\n* PUT Event Registration (/registrations): Updates event registration, if any, with given model:\r\n```json\r\n    \"registeredName\": \"abc\",\r\n    \"registeredPhone\": 9999999999,\r\n    \"registeredEmail\": \"abc@example.com\",\r\n    \"registeredIDCard\": \"data:image/png;base64,...\"\r\n    \"eventId\": \"blr01\",\r\n    \"type\": \"Self\",\r\n    \"ticketCount\": 1,\r\n    \"regId\": \"abc:blr01\"\r\n```\r\n\r\n#### DELETE Endpoints\r\n* DELETE User (/users/:email): Deletes user, if any, with given email.\r\n* DELETE Event (/events/:eventId): Deletes event, if any, with given event id.\r\n* DELETE Event Registration (/registrations/:regId): Deletes event registration, if any, with given registration id.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/users/:email",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						":email"
+					],
+					"variable": [
+						{
+							"key": "email",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/events",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/events/:eventId",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"events",
+						":eventId"
+					],
+					"variable": [
+						{
+							"key": "eventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Event Registrations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/registrations",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"registrations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event Registration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/registrations/:regId",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"registrations",
+						":regId"
+					],
+					"variable": [
+						{
+							"key": "regId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/events",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/registrations",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"registrations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/events",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event Registration",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/registrations",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"registrations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/users/:email",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						":email"
+					],
+					"variable": [
+						{
+							"key": "email",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Event",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/events/:eventId",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"events",
+						":eventId"
+					],
+					"variable": [
+						{
+							"key": "eventId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Event Registration",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://hackstack-backend.herokuapp.com/registrations/:regId",
+					"protocol": "https",
+					"host": [
+						"hackstack-backend",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"registrations",
+						":regId"
+					],
+					"variable": [
+						{
+							"key": "regId",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "73f5bceb-3f5a-4b85-b930-a93b4ef81d79",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a15e70c1-40a8-4b3c-b6da-3a5153106a80",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
