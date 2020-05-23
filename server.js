@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
+const cors = require('cors');
 const { initiateConnection } = require('./connector');
 const port = process.env.PORT || 3000;
 const { loginUser, getAllUsers, getUser, getAllEvents, getEvent, getEventRegistration, getAllEventRegistrations } = require('./getters');
@@ -8,6 +9,7 @@ const { editUser, editEvent, editEventRegistration } = require('./updater');
 const { deleteUser, deleteEvent, deleteEventRegistration } = require('./remover');
 const { saveUser, saveEvent, saveEventRegistration } = require('./savers');
 app.use(bodyParser.json())
+app.use(cors())
 
 // GET Endpoints
 
