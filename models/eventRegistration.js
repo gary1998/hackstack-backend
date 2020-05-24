@@ -8,7 +8,7 @@ const eventRegistrationSchema = new mongoose.Schema({
         required: true,
     },
     registeredPhone: {
-        type: Number,
+        type: String,
         trim: true,
         required: true,
         maxlength: 10
