@@ -13,7 +13,7 @@ const eventSchema = new mongoose.Schema({
         required: true
     },
     eventEmail: {
-        type: Number,
+        type: String,
         required: true,
         trim: true,
         lowercase: true,
