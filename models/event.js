@@ -22,7 +22,7 @@ const eventSchema = new mongoose.Schema({
         }
     },
     eventHelpline: {
-        type: Number,
+        type: String,
         required: false,
         maxlength: 10
     },
