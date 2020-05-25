@@ -23,8 +23,7 @@ const eventRegistrationSchema = new mongoose.Schema({
         }
     },
     registeredIDCard: {
-        data: Buffer,
-        contentType: String,
+        type: String,
         required: true
     },
     eventId: {
